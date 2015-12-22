@@ -6,6 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "test": "mocha",
+    "config-prod": "node infrastructure/heroku.js",
+    "config-stage": "node infrastructure/heroku-stage.js",
     "lint": "jshint --exclude=node_modules/** **.js"
   },
   "author": "",
