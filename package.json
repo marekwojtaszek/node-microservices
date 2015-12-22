@@ -18,6 +18,7 @@
     "serve-favicon": "^2.3.0"
   },
   "devDependencies": {
+    "heroin-js": "1.4.0",
     "jshint": "^2.8.0"
   }
 }
