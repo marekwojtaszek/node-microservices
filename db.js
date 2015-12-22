@@ -2,7 +2,6 @@ module.exports = function(connection) {
   return {
     findAll: function() {
       return connection.then(function(db) {
-        // throw new Error('test error');
         return db.collection('wojtaszek-books').find({}).toArray();
       }).catch(function(err) {
         console.log('catch err: ', err);
@@ -20,13 +19,16 @@ module.exports = function(connection) {
     getCount: function(isbn) {
       return connection.then(function(db) {
         isbn = parseInt(isbn, 10);
-
         return db.collection('wojtaszek-books').find({isbn: isbn}).limit(1).next();
       }).then(function(result) {
-        return result.count;
+        if(result) {
+          return result.count;
+        } else {
+          return 0;
+        }
       }).catch(function(err) {
         console.log('catch err: ', err);
-        return res.send('catch err');
+        return err;
       });
     }
   };

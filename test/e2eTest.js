@@ -41,6 +41,7 @@ describe('GET /books/123', function(){
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
       .expect(200, {
+        status: 'ok',
         count: 1
       }, done);
   });

@@ -28,7 +28,8 @@ module.exports = function(dataSource) {
     getCount: function(req, res) {
       dataSource.getCount(req.params.isbn).then(function(data) {
         res.status(200).json({
-          count: data
+          'status': 'ok',
+          'count': data
         });
       });
     },
@@ -38,7 +39,9 @@ module.exports = function(dataSource) {
       });
     },
     nolog: function (req, res) {
-      res.send('No Log Hello World!');
+      res.json({
+        message: 'No Log Hello World!'
+      });
     }
   };
 };

@@ -7,7 +7,7 @@ module.exports = function(dataSource) {
   var routes      = require('./routes.js')(dataSource);
 
   function logTime(req, res, next) {
-    console.log('Time:', Date.now());
+    // console.log('Time:', Date.now());
     next();
   }
 
@@ -19,7 +19,6 @@ module.exports = function(dataSource) {
 
   function serverError(err, req, res, next) {
     res.status(err.status || 500);
-    console.error(err.stack);
     res.json({
       message: err.message,
       error: (process.env.NODE_ENV === 'production') ? {} : err
