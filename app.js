@@ -1,6 +1,7 @@
 module.exports = function(dataSource) {
   var express     = require('express');
   var bodyParser  = require('body-parser');
+  var favicon     = require('serve-favicon');
   var app         = express();
 
   var routes      = require('./routes.js')(dataSource);
@@ -26,6 +27,7 @@ module.exports = function(dataSource) {
   }
 
   app.use(bodyParser.json());
+  app.use(favicon(__dirname + '/favicon.ico'));
 
   app.post('/stock', routes.stockUp);
 
