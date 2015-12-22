@@ -1,3 +1,18 @@
+/**
+
+heroku plugins:install heroku-pipelines
+
+------------------------------------------------------------------------
+
+var heroin = require('heroin-js');
+var configurator = heroin(process.env.HEROKU_API_TOKEN, {debug: false});
+
+configurator.export('bookinventoryservice').then(function(result) {
+    console.log(result);
+});
+
+**/
+
 module.exports = {
   region: 'eu',
   maintenance: false,
