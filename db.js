@@ -3,7 +3,7 @@ module.exports = function(connection) {
     findAll: function() {
       return connection.then(function(db) {
         // throw new Error('test error');
-        return db.collection('books').find({}).toArray();
+        return db.collection('wojtaszek-books').find({}).toArray();
       }).catch(function(err) {
         console.log('catch err: ', err);
         return res.send('catch err');
@@ -11,7 +11,7 @@ module.exports = function(connection) {
     },
     stockUp: function(isbn, count) {
       connection.then(function(db) {
-        return db.collection('books').updateOne({isbn: isbn}, {
+        return db.collection('wojtaszek-books').updateOne({isbn: isbn}, {
           isbn: isbn,
           count: count
         }, {upsert: true});
@@ -21,7 +21,7 @@ module.exports = function(connection) {
       return connection.then(function(db) {
         isbn = parseInt(isbn, 10);
 
-        return db.collection('books').find({isbn: isbn}).limit(1).next();
+        return db.collection('wojtaszek-books').find({isbn: isbn}).limit(1).next();
       }).then(function(result) {
         return result.count;
       }).catch(function(err) {
