@@ -1,0 +1,21 @@
+{
+  "name": "book_inventory_service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "mocha",
+    "lint": "jshint --exclude=node_modules/** **.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.13.3",
+    "lodash": "^3.10.1",
+    "mongodb": "2.0.52"
+  },
+  "devDependencies": {
+    "jshint": "^2.8.0"
+  }
+}
