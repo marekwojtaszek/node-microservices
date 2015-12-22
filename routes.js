@@ -1,5 +1,10 @@
 module.exports = function(dataSource) {
   return {
+    index: function(req, res) {
+      res.json({
+        'status': 'ok'
+      });
+    },
     findAll: function(req, res) {
       dataSource.findAll().then(function(data) {
         res.json(data);

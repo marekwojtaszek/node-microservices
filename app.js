@@ -29,6 +29,7 @@ module.exports = function(dataSource) {
 
   app.post('/stock', routes.stockUp);
 
+  app.get('/', routes.index);
   app.get('/books/:isbn', routes.getCount);
   app.get('/books/', routes.findAll);
   app.get('/log', logTime, routes.log);
