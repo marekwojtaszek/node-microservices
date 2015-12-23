@@ -1,5 +1,6 @@
 module.exports = function(dataSource) {
   var express     = require('express');
+  var cors        = require('express-cors');
   var bodyParser  = require('body-parser');
   var favicon     = require('serve-favicon');
   var app         = express();
@@ -28,6 +29,12 @@ module.exports = function(dataSource) {
 
   app.use(bodyParser.json());
   app.use(favicon(__dirname + '/favicon.ico'));
+
+  app.use(cors({
+    allowedOrigins: [
+      '*'
+    ]
+  }));
 
   app.post('/stock', routes.stockUp);
 
