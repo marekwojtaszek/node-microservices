@@ -1,3 +1,7 @@
+/**
+ * mongod --dbpath=./data --port 27017
+ */
+
 module.exports = function(connection) {
   return {
     findAll: function() {

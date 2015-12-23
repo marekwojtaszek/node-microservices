@@ -26,11 +26,17 @@ module.exports = function(dataSource) {
       });
     },
     getCount: function(req, res) {
+      var type = req.query.type;
+
       dataSource.getCount(req.params.isbn).then(function(data) {
-        res.status(200).json({
-          'status': 'ok',
-          'count': data
-        });
+        if(type === 'html') {
+          res.send('count: ' + data);
+        } else {
+          res.status(200).json({
+            'status': 'ok',
+            'count': data
+          });
+        }
       });
     },
     log: function (req, res) {
