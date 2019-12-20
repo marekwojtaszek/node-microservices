@@ -15,7 +15,7 @@
   "dependencies": {
     "body-parser": "1.14.2",
     "express": "4.13.3",
-    "lodash": "3.10.1",
+    "lodash": "4.17.15",
     "mongodb": "2.0.52",
     "serve-favicon": "^2.3.0"
   },
